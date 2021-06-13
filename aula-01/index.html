@@ -11,12 +11,9 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
-        <div v-if="usuario.id == 1">
-            id: {{ usuario.id }},<br>
-            Nome: {{ usuario.nome }},<br>
-            Profissao: {{ usuario.profissao }}
-        </div>
-        <div v-else>Nenhum usuario com ID = 1</div>
+        <ul>
+            <li v-for="(item,index) in linguagens">{{ index }} - {{ item.nome }}</li>
+        </ul>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -24,11 +21,13 @@
             el: "#app",
             data: {
                 title: "Aula 01 - Vuejs do jeito ninja",
-                usuario: {
-                    id: 2,
-                    nome: "Jon Snow",
-                    profissao: "Ator"
-                }
+                linguagens: [
+                    { nome: "JavaScript" },
+                    { nome: "PHP" },
+                    { nome: "C#" },
+                    { nome: "Java" },
+                    { nome: "Python" }
+                ]
             }
         })
     </script>
